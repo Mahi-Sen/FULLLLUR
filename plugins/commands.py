@@ -389,7 +389,7 @@ async def start(client:Client, message):
     btn = [[
         InlineKeyboardButton("⭐ ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ 🚀", callback_data=f'stream#{file.file_id}'),
         InlineKeyboardButton("🎥 ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ ⭐", callback_data=f'stream#{file.file_id}')
-    [
+    ],[
         InlineKeyboardButton('🍿 ᴜᴘᴅᴀᴛᴇs 🎥', url=f'https://t.me/Radhe_Krishn_Movies')
     ]]
     toDel=await client.send_cached_media(
