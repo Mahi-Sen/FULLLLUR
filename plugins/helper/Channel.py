@@ -3,13 +3,13 @@ from pyrogram import Client, filters
 from pyrogram.types import *
 
 # Replace this with your own channel ID
-CHANNEL_ID = -1001944607209
+CHANNEL_ID = -1002037872585
 
 @Client.on_message(filters.channel & filters.media)
 async def add_button(client, message):
     if message.chat.id == CHANNEL_ID:
         button = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔰𝗠𝗼𝘃𝗶𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗚𝗿𝗼𝘂𝗽🔰", url="https://t.me/learning_bots")]]
+            [[InlineKeyboardButton("🔰 ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ɢʀᴏᴜᴘ 🔰", url="https://t.me/Mahi_Movie_Request")]]
         )
         
         try:
