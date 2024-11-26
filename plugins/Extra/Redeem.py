@@ -22,7 +22,7 @@ async def add_redeem_code(client, message):
             time = message.command[1]
             num_codes = int(message.command[2])
         except ValueError:
-            await message.reply_text("Please provide a valid number of codes to generate.")
+            await message.reply_text("ᴘʟᴇᴀꜱᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴠᴀʟɪᴅ ɴᴜᴍʙᴇʀ ᴏꜰ ᴄᴏᴅᴇꜱ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ.")
             return
 
         codes = []
@@ -33,19 +33,19 @@ async def add_redeem_code(client, message):
 
         codes_text = '\n'.join(f"➔ <code>/redeem {code}</code>" for code in codes)
         response_text = f"""
-<b>Gɪғᴛᴄᴏᴅᴇ Gᴇɴᴇʀᴀᴛᴇᴅ ✅
+<b>ᴅᴇᴠᴄᴏᴅᴇ ɢᴇɴᴇʀᴀᴛᴇᴅ ✅
 Aᴍᴏᴜɴᴛ:</b> {num_codes}
 
 {codes_text}
 <b>Duration:</b> {time}
 
 🔰<u>𝗥𝗲𝗱𝗲𝗲𝗺 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻</u>🔰
-<b>𝙹𝚞𝚜𝚝 𝚌𝚕𝚒𝚌𝚔 𝚝𝚑𝚎 𝚊𝚋𝚘𝚟𝚎 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚌𝚘𝚙𝚢 𝚊𝚗𝚍 𝚝𝚑𝚎𝚗 𝚜𝚎𝚗𝚍 𝚝𝚑𝚊𝚝 𝚌𝚘𝚍𝚎 𝚝𝚘 𝚝𝚑𝚎 𝙱𝚘𝚝, 𝚝𝚑𝚊𝚝'𝚜 𝚒𝚝 🔥</b>"""
+<b> ᴊᴜꜱᴛ ᴄʟɪᴄᴋ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴅᴇ ᴛᴏ ᴄᴏᴘʏ ᴀɴᴅ ᴛʜᴇɴ ꜱᴇɴᴅ ᴛʜᴀᴛ ᴄᴏᴅᴇ ᴛᴏ ᴛʜᴇ ʙᴏᴛ, ᴛʜᴀᴛ'ꜱ ɪᴛ🔥</b>"""
 
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("♻️ Redeem Here ♻️", url="http://t.me/NehaTestBot")],
-                [InlineKeyboardButton("❕ Any Query ❕", url="https://t.me/IM_JISSHU")]
+                [InlineKeyboardButton("♻️ ʀᴇᴅᴇᴇᴍ ʜᴇʀᴇ ♻️", url="http://t.me/UnknownK_RoBot")],
+                [InlineKeyboardButton("⁉️ ᴀɴʏ ǫᴜᴇʀʏ ⁉️", url="https://t.me/Dev77_xD")]
             ]
         )
 
@@ -67,7 +67,7 @@ async def redeem_code(client, message):
                 try:
                     seconds = await get_seconds(time)
                 except Exception as e:
-                    await message.reply_text("Invalid time format in redeem code.")
+                    await message.reply_text("ɪɴᴠᴀʟɪᴅ ᴛɪᴍᴇ ꜰᴏʀᴍᴀᴛ ɪɴ ʀᴇᴅᴇᴇᴍ ᴄᴏᴅᴇ.")
                     return
 
                 if seconds > 0:
@@ -80,9 +80,9 @@ async def redeem_code(client, message):
                         current_expiry = current_expiry.replace(tzinfo=pytz.utc)
 
                     if current_expiry and current_expiry > now_aware:
-                        expiry_str_in_ist = current_expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ Expiry Time: %I:%M:%S %p")
+                        expiry_str_in_ist = current_expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n**⏱️ Expiry Time:** %I:%M:%S %p")
                         await message.reply_text(
-                            f"🚫 You already have premium access, which expires on {expiry_str_in_ist}.\nYou cannot redeem another code until your current premium expires.",
+                            f"🚫 ʏᴏᴜ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ, ᴡʜɪᴄʜ ᴇxᴘɪʀᴇꜱ ᴏɴ {expiry_str_in_ist}.\nʏᴏᴜ ᴄᴀɴɴᴏᴛ ʀᴇᴅᴇᴇᴍ ᴀɴᴏᴛʜᴇʀ ᴄᴏᴅᴇ ᴜɴᴛɪʟ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴘʀᴇᴍɪᴜᴍ ᴇxᴘɪʀᴇꜱ.",
                             disable_web_page_preview=True
                         )
                         return
@@ -94,20 +94,20 @@ async def redeem_code(client, message):
                     expiry_str_in_ist = expiry_time.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ Expiry Time: %I:%M:%S %p")
 
                     await message.reply_text(
-                        f"Premium activated successfully!\n\nUser: {user.mention}\nUser ID: {user_id}\nPremium Access: <code>{time}</code>\n\nExpiry Date: {expiry_str_in_ist}",
+                        f"**ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ!\n\nᴜꜱᴇʀ: {user.mention}\nᴜꜱᴇʀ ɪᴅ: {user_id}\nᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ: <code>{time}</code>\n\nᴇxᴘɪʀʏ ᴅᴀᴛᴇ:** {expiry_str_in_ist}",
                         disable_web_page_preview=True
                     )
 
                     await client.send_message(
                         LOG_CHANNEL,
-                        text=f"#Redeem_Premium\n\n👤 User: {user.mention}\n⚡ User ID: <code>{user_id}</code>\n⏰ Premium Access: <code>{time}</code>\n⌛️ Expiry Date: {expiry_str_in_ist}",
+                        text=f"**#Redeem_Premium\n\n👤 User: {user.mention}\n⚡ User ID: <code>{user_id}</code>\n⏰ Premium Access: <code>{time}</code>\n⌛️ Expiry Date:** {expiry_str_in_ist}",
                         disable_web_page_preview=True
                     )
                 else:
-                    await message.reply_text("Invalid time format in redeem code.")
+                    await message.reply_text("ɪɴᴠᴀʟɪᴅ ᴛɪᴍᴇ ꜰᴏʀᴍᴀᴛ ɪɴ ʀᴇᴅᴇᴇᴍ ᴄᴏᴅᴇ.")
             except Exception as e:
-                await message.reply_text(f"An error occurred while redeeming the code: {e}")
+                await message.reply_text(f"ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ʀᴇᴅᴇᴇᴍɪɴɢ ᴛʜᴇ ᴄᴏᴅᴇ: {e}")
         else:
-            await message.reply_text("Invalid Redeem Code or Expired.")
+            await message.reply_text("ɪɴᴠᴀʟɪᴅ ʀᴇᴅᴇᴇᴍ ᴄᴏᴅᴇ ᴏʀ ᴇxᴘɪʀᴇᴅ.")
     else:
         await message.reply_text("Usage: /redeem <code>")
