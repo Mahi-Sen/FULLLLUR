@@ -921,28 +921,44 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "verifyon":
         await query.answer(f'Only the bot admin can ᴏɴ ✓ or ᴏғғ ✗ this feature.', show_alert=True)
-    
+
     elif query.data == "features":
-        buttons = [[
+	await query.message.edit_text(
+            script.HELP_TXT.format(query.from_user.mention(),temp.B_LINK),
+            reply_markup = InlineKeyboardMarkup(
+	[[
               InlineKeyboardButton('ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ', callback_data='admincmd'),
               InlineKeyboardButton('ɪᴍᴀɢᴇ ᴛᴏ ʟɪɴᴋ', callback_data='telegraph'),
-              ], [
+        ],[
               InlineKeyboardButton('ꜰ-ꜱᴜʙ', callback_data='fsub'),
               InlineKeyboardButton('ɢʀᴏᴜᴘ ꜱᴇᴛᴜᴘ', callback_data='earn')
-              ], [
+        ],[
               InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
-              ]]
-    
-        reply_markup = InlineKeyboardMarkup(buttons)
-    
-        await query.message.edit_media(
-            media=InputMediaPhoto(
-            media=START_IMG,
-            caption=script.HELP_TXT,
-            parse_mode=enums.ParseMode.HTML 
-            ),
-            reply_markup=reply_markup
+        ]]
+	),
+            disable_web_page_preview = True
 	)
+#    elif query.data == "features":
+#        buttons = [[
+#              InlineKeyboardButton('ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ', callback_data='admincmd'),
+#              InlineKeyboardButton('ɪᴍᴀɢᴇ ᴛᴏ ʟɪɴᴋ', callback_data='telegraph'),
+#              ], [
+#              InlineKeyboardButton('ꜰ-ꜱᴜʙ', callback_data='fsub'),
+#              InlineKeyboardButton('ɢʀᴏᴜᴘ ꜱᴇᴛᴜᴘ', callback_data='earn')
+#              ], [
+#              InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
+#             ]]
+#    
+#        reply_markup = InlineKeyboardMarkup(buttons)
+#    
+#        await query.message.edit_media(
+#            media=InputMediaPhoto(
+#            media=START_IMG,
+#            caption=script.HELP_TXT,
+#            parse_mode=enums.ParseMode.HTML 
+#           ),
+#            reply_markup=reply_markup
+	#)
       #  await query.message.edit_text(
       #      text=script.HELP_TXT,
       #      reply_markup=reply_markup,
